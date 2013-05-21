@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.all
+    @posts = Post.newest_first
     respond_with @posts
   end
 
