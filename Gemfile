@@ -57,3 +57,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'omniauth'
+gem 'omniauth-openid'
+gem 'gravatar-ultimate'
