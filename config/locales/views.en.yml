@@ -1,4 +1,7 @@
 en:
+  layouts:
+    application:
+      helaas: Helaas
   posts:
     index:
       new: 'New post'

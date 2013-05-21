@@ -1,14 +1,22 @@
 !!! 5
 %html
   %head
-  %title Helaas
+  %title= t('.helaas')
   = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
   = javascript_include_tag "application", "data-turbolinks-track" => true
   = csrf_meta_tags
 
   %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to t('.helaas'), root_path, class: 'brand'
+          .nav-collapse.collapse
+            %ul.nav
+              %li= link_to t('.home'), root_path
 
-    = yield
+    .container
+      = yield
 
-    #notifications.well{ 'data-uri' => "#{root_url(true).sub(/^http:\/\//, '')}websocket" }
+      #notifications.well{ 'data-uri' => "#{root_url(true).sub(/^http:\/\//, '')}websocket" }
 
