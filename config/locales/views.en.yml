@@ -1,0 +1,7 @@
+en:
+  posts:
+    index:
+      new: 'New post'
+      post: 'Post'
+    show:
+      comment: 'Remark'

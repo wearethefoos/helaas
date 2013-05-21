@@ -1,4 +1,6 @@
 %table
   %tr
-    %th Post
+    %th t('.post')
   = render @posts
+
+= link_to t('.new'), new_post_path

@@ -2,7 +2,7 @@
 
 %table
   %tr
-    %th= Comment
+    %th= t('.comment')
     = render @post.comments
 
 = simple_form_for [@post, @comment] do |f|
