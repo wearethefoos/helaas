@@ -12,12 +12,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params)
     respond_with @post
   end
 
   def show
-    @post = Post.find(:id)
+    @post = Post.find(params[:id])
     respond_with @post
   end
 
