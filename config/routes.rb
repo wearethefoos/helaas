@@ -52,4 +52,6 @@ Helaas::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:post, :get]
 end
