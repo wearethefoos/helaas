@@ -1,0 +1,14 @@
+!!! 5
+%html
+  %head
+  %title Helaas
+  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+  = csrf_meta_tags
+
+  %body
+
+    = yield
+
+    #notifications.well{ 'data-uri' => "#{root_url(true).sub(/^http:\/\//, '')}websocket" }
+
