@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     user.provider   = auth_hash.provider
     user.uid        = auth_hash.uid
     user.email      = auth_hash.info.email
-    user.image      = auth_hash.info.image
+    user.image      = Gravatar.new(user.email).image_url
     user.first_name = auth_hash.info.first_name
     user.last_name  = auth_hash.info.last_name
     user.full_name       = auth_hash.info.name
