@@ -3,11 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
 
-  before_filter :set_current_user
+  before_filter :always_logged_in
 
-  def set_current_user
+  def always_logged_in
     if id = session[:current_user_id]
       User.current_user = User.find(id)
+    else
+      session[:after_login_path] = request.path
+      redirect_to '/auth/google'
     end
   end
 end
