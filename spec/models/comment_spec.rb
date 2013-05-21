@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Post do
+describe Comment do
   it { should validate_presence_of :content }
 end
