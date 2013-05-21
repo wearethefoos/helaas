@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe PostsController do
+  let(:user) { create :user }
+  before do
+    session[:current_user_id] = user.id
+  end
+
   describe "#show" do
     let(:post) { double("some-post") }
     it "finds the requested post" do

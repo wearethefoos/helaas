@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe CommentsController do
+  let(:user) { create :user }
+  before do
+    session[:current_user_id] = user.id
+  end
+
   describe "#create" do
     let(:main_post) { Post.create content: 'Foo' }
 
@@ -18,4 +23,3 @@ describe CommentsController do
     end
   end
 end
-
