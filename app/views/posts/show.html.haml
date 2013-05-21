@@ -1,1 +1,10 @@
 %p= @post.content
+
+%table
+  %tr
+    %th= Comment
+    = render @post.comments
+
+= simple_form_for [@post, @comment] do |f|
+  = f.input :content
+  = f.button :submit
