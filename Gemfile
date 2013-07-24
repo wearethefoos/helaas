@@ -41,15 +41,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :develpment, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-end
-
-group :test do
-  gem 'shoulda-matchers'
-end
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -65,3 +56,7 @@ end
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'gravatar-ultimate'
+
+gem 'rspec-rails', group: [:development, :test]
+gem 'factory_girl_rails', group: [:develpment, :test]
+gem 'shoulda-matchers', group: :test
