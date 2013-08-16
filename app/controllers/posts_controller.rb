@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+      WebsocketRails[:notifications].trigger 'new_post', @post
     respond_with @post
   end
 
