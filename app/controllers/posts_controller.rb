@@ -3,23 +3,19 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.newest_first
-    respond_with @posts
   end
 
   def new
     @post = Post.new
-    respond_with @post
   end
 
   def create
-    @post = Post.create(post_params)
-    respond_with @post
+    redirect_to post_path(@post) if @post = Post.create(post_params)
   end
 
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    respond_with @post
   end
 
   private
