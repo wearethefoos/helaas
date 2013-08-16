@@ -1,2 +1,5 @@
-%tr
-  %td= link_to post.content, post
+.post.row
+  .thumbnail.span1
+    Avatar
+  .content.span9=post.content
+  .span2= link_to t('.read_more'), post

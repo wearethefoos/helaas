@@ -19,5 +19,5 @@
     .container
       = yield
 
-      #notifications.well{ 'data-uri' => "#{root_url(true).sub(/^http:\/\//, '')}websocket" }
+      .notifications{ 'data-uri' => "#{root_url(true).sub(/^http:\/\//, '')}websocket" }
 

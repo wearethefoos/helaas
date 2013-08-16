@@ -1,6 +1,5 @@
-%table.posts
-  %tr
-    %th= t('.post')
+#posts
+  %h3= t('.updates_in_your_network')
   = render @posts
 
-= link_to t('.new'), new_post_path
+  =link_to t('.new'), new_post_path, class: 'btn btn-primary btn-large'
