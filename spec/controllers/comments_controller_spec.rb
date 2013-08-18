@@ -17,6 +17,11 @@ describe CommentsController do
       expect { creation_request }.to change { main_post.comments.count }.by(1)
     end
 
+    it "sets the owner of the comment to the current user." do
+      creation_request
+      Comment.last.user.should eq user
+    end
+
     it "redirects to the original post" do
       creation_request
       response.should redirect_to post_path(main_post)

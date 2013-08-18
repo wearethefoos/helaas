@@ -2,16 +2,21 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.newest_first
-  end
-
-  def new
-    @post = Post.new
+    @post    = Post.new
+    @comment = Comment.new
+    @posts   = Post.newest_first
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new post_params
+    @post.user = User.current_user
+    if @post.save
       WebsocketRails[:notifications].trigger 'new_post', @post
+      redirect_to action: :index
+    else
+      @posts = Post.newest_first
+      render :index
+    end
   end
 
   def show

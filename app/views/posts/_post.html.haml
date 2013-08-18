@@ -1,5 +1,18 @@
 .post.row
-  .thumbnail.span1
-    Avatar
-  .content.span9=post.content
+  = gravatar(post.user, 2)
+  .content.span9
+    %p.author= post.user.full_name
+    %p.post-date
+      = time_ago_in_words post.created_at \
+      = t('ago')
+    = post.content
   .span2= link_to t('.read_more'), post
+
+  .comments.span9.offset1
+    = render post.comments
+  .comment-form.span9
+    = gravatar(User.current_user)
+    .span7
+      = simple_form_for [post, @comment] do |f|
+        = f.input :content, label: false
+        = f.button :submit

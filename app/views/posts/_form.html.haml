@@ -1,0 +1,4 @@
+.well
+  = simple_form_for @post do |f|
+    = f.input :content, label: false, placeholder: t('.share_something')
+    = f.button :submit, class: 'btn btn-primary pull-right'

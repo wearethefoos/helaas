@@ -6,5 +6,7 @@ en:
     index:
       new: 'New post'
       post: 'Post'
+    form:
+      share_something: 'Share something..'
     show:
       comment: 'Remark'

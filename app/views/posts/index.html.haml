@@ -1,5 +1,8 @@
 #posts
   %h3= t('.updates_in_your_network')
+
+  = render 'form'
+
   = render @posts
 
   =link_to t('.new'), new_post_path, class: 'btn btn-primary btn-large'

@@ -18,5 +18,10 @@ describe PostsController do
     it "creates a new post" do
       expect { post :create, post: { content: 'Foo' } }.to change(Post, :count).by(1)
     end
+
+    it "assigns the current user to the post" do
+      post :create, post: { content: 'Bar' }
+      assigns(:post).user.should eq User.current_user
+    end
   end
 end

@@ -3,9 +3,12 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.build(comment_params)
+    @comment.user = User.current_user
 
-    respond_with @comment, location: @post
+    if @comment.save
+      respond_with @comment, location: @post
+    end
   end
 
   private
