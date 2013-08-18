@@ -51,7 +51,6 @@ GEM
     faye-websocket (0.6.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.2.0)
-    gravatar-ultimate (1.0.3)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -172,7 +171,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
-  gravatar-ultimate
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

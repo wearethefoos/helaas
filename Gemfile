@@ -55,7 +55,6 @@ end
 
 gem 'omniauth'
 gem 'omniauth-openid'
-gem 'gravatar-ultimate'
 
 gem 'rspec-rails', group: [:development, :test]
 gem 'factory_girl_rails', group: [:develpment, :test]
