@@ -1,4 +1,4 @@
-Helaas::Application.routes.draw do
+Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts, only: [:index, :new, :create, :show] do
@@ -45,7 +45,7 @@ Helaas::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
