@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130818075901) do
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
     t.text     "content"
     t.datetime "created_at"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20130818075901) do
 
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 20130818075901) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
-  create_table "users", force: true do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "domain"
-    t.string "email"
-    t.string "image"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "full_name"
+  create_table "users", force: :cascade do |t|
+    t.string "provider",   limit: 255
+    t.string "uid",        limit: 255
+    t.string "domain",     limit: 255
+    t.string "email",      limit: 255
+    t.string "image",      limit: 255
+    t.string "first_name", limit: 255
+    t.string "last_name",  limit: 255
+    t.string "full_name",  limit: 255
   end
 
 end
