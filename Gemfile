@@ -50,6 +50,6 @@ gem 'spring',        group: :development
 gem 'omniauth'
 gem 'omniauth-openid'
 
-gem 'rspec-rails', group: [:development, :test]
+gem 'rspec-rails', '~> 2.99.0', group: [:development, :test]
 gem 'factory_girl_rails', group: [:develpment, :test]
 gem 'shoulda-matchers', group: :test
