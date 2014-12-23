@@ -57,5 +57,6 @@ end
 
 gem 'omniauth'
 gem 'omniauth-openid'
+gem 'responders', '~> 2.0'
 
 gem 'shoulda-matchers', group: :test
