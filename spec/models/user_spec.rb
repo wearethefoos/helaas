@@ -5,6 +5,6 @@ describe User do
     let(:emails) { %w(foo@springest.com bar@springest.biz boo@springe.st) }
     subject { emails.map { |e| User.domain_from_email(e) } }
 
-    it { should eq %w(springest.com springest.biz springe.st) }
+    it { is_expected.to eq %w(springest.com springest.biz springe.st) }
   end
 end

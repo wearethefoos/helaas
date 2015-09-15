@@ -9,7 +9,7 @@ describe PostsController do
   describe "#show" do
     let(:post) { double("some-post") }
     it "finds the requested post" do
-      Post.should_receive(:find).with('post-id').and_return post
+      expect(Post).to receive(:find).with('post-id').and_return post
       get :show, id: 'post-id'
     end
   end
@@ -21,7 +21,7 @@ describe PostsController do
 
     it "assigns the current user to the post" do
       post :create, post: { content: 'Bar' }
-      assigns(:post).user.should eq User.current_user
+      expect(assigns(:post).user).to eq User.current_user
     end
   end
 end
